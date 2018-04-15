@@ -1,6 +1,7 @@
 package pl.pwn.reaktor.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +27,7 @@ public class LoginController {
     private TextField tf_password;
 
     @FXML
-    void login_action(MouseEvent event) throws IOException {
+    void login_action(MouseEvent event) throws IOException, SQLException {
     	String login = tf_login.getText();
 		String password = tf_password.getText();
 		boolean isLogin = userService.login(login, password);

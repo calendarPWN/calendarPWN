@@ -7,7 +7,7 @@
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.username">26932668_cal</property>
 		<property name="hibernate.connection.password">calendar#2018</property>
-		<property name="hibernate.connection.url">jdbc:mysql://serwer1884902.home.pl:3306</property>
+		<property name="hibernate.connection.url">jdbc:mysql://serwer1884902.home.pl:3306/26932668_cal</property>
 		<property name="format_sql">false</property>
 		<property name="show_sql">true</property>
 		<!-- automatyczne tworzenie modelu opcje:none, validate, create, update, 
@@ -15,7 +15,7 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<!-- mapowanie encji na tabela i tabel na encje -->
 		<!-- <mapping class="pl.pwn.reaktor.model.Encja" /> -->
-		<mapping class="pl.pwn.reaktor.model.User" />
+		<!-- <mapping class="pl.pwn.reaktor.model.User" /> -->
 		<mapping class="pl.pwn.reaktor.model.Login" />
 		
 	</session-factory>

@@ -52,6 +52,40 @@ DEFAULT CHARACTER SET = latin2;
 
 
 -- -----------------------------------------------------
+-- Table `26932668_cal`.`Kolejnosc`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `26932668_cal`.`Kolejnosc` (
+  `idKolejnosc` INT(11) NOT NULL AUTO_INCREMENT,
+  `Kolejnosc` VARCHAR(255) NULL DEFAULT NULL,
+  `Szkolenie_idSzkolenie` INT(11) NOT NULL,
+  PRIMARY KEY (`idKolejnosc`),
+  INDEX `fk_Kolejnosc_Szkolenie1_idx` (`Szkolenie_idSzkolenie` ASC),
+  CONSTRAINT `fk_Kolejnosc_Szkolenie1`
+    FOREIGN KEY (`Szkolenie_idSzkolenie`)
+    REFERENCES `26932668_cal`.`Szkolenie` (`idSzkolenie`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = latin2
+COMMENT = '	';
+
+
+-- -----------------------------------------------------
+-- Table `26932668_cal`.`Login`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `26932668_cal`.`Login` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `Trener_idTrener` VARCHAR(255) NULL DEFAULT NULL,
+  `login` VARCHAR(255) NULL DEFAULT NULL,
+  `password` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `UK_6cetnagnihchjb4qvhi3ndvcb` (`login` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin2;
+
+
+-- -----------------------------------------------------
 -- Table `26932668_cal`.`Tematy_szkolen`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `26932668_cal`.`Tematy_szkolen` (
@@ -59,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `26932668_cal`.`Tematy_szkolen` (
   `Temat` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`idTematy_szkolen`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 8
+AUTO_INCREMENT = 9
 DEFAULT CHARACTER SET = latin2;
 
 
@@ -135,6 +169,21 @@ DEFAULT CHARACTER SET = latin2;
 
 
 -- -----------------------------------------------------
+-- Table `26932668_cal`.`User`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `26932668_cal`.`User` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `last_name` VARCHAR(255) NULL DEFAULT NULL,
+  `login` VARCHAR(255) NULL DEFAULT NULL,
+  `name` VARCHAR(255) NULL DEFAULT NULL,
+  `password` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `UK_587tdsv8u5cvheyo9i261xhry` (`login` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin2;
+
+
+-- -----------------------------------------------------
 -- Table `26932668_cal`.`login`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `26932668_cal`.`login` (
@@ -152,24 +201,6 @@ CREATE TABLE IF NOT EXISTS `26932668_cal`.`login` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = latin2;
-
-
--- -----------------------------------------------------
--- Table `26932668_cal`.`Kolejnosc`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `26932668_cal`.`Kolejnosc` (
-  `idKolejnosc` INT NOT NULL AUTO_INCREMENT,
-  `Kolejnosc` VARCHAR(255) NULL,
-  `Szkolenie_idSzkolenie` INT(11) NOT NULL,
-  PRIMARY KEY (`idKolejnosc`),
-  INDEX `fk_Kolejnosc_Szkolenie1_idx` (`Szkolenie_idSzkolenie` ASC),
-  CONSTRAINT `fk_Kolejnosc_Szkolenie1`
-    FOREIGN KEY (`Szkolenie_idSzkolenie`)
-    REFERENCES `26932668_cal`.`Szkolenie` (`idSzkolenie`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-COMMENT = '	';
 
 USE `26932668_cal` ;
 

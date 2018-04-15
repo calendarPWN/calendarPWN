@@ -11,10 +11,9 @@ public class Login {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
-	@Column(unique = true)
+	@Column(name = "login")
 	private String login;
-
+	@Column(name = "password")
 	private String password;
 	
 	@Column(name = "Trener_idTrener")
