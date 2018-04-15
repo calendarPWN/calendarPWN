@@ -1,5 +1,7 @@
 package pl.pwn.reaktor.controller;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,12 +26,13 @@ public class LoginController {
     private TextField tf_password;
 
     @FXML
-    void login_action(MouseEvent event) {
+    void login_action(MouseEvent event) throws IOException {
     	String login = tf_login.getText();
 		String password = tf_password.getText();
 		boolean isLogin = userService.login(login, password);
+		System.out.println(isLogin);
 		if (isLogin) {
-			Parent parent = FXMLLoader.load(getClass().getResource("/view/AnkietaView.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource("/view/CalendarViewTrener.fxml"));
 			Scene scene = new Scene(parent);
 			Main.getPrimaryStage().setScene(scene);
 		} else {

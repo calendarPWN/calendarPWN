@@ -6,7 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import pl.pwn.reaktor.model.User;
+import pl.pwn.reaktor.model.Login;
 import pl.pwn.reaktor.util.HibernateUtil;
 
 public class UserService {
@@ -16,17 +16,18 @@ public class UserService {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction trx = session.beginTransaction();
 
-		Query query = session.createQuery("FROM User WHERE login=:login and password=:pass");
+		Query query = session.createQuery("FROM Login WHERE login=:login and password=:pass");
 		query.setString("login", login);
 		query.setString("pass", password);
 
-		List<User> list = query.list();
+		List<Login> list = query.list();
 		trx.commit();
 		session.close();
 		
 		if (list.isEmpty()) {
 			return false;
 		}
-		User user = list.get(0);
+		Login login2 = list.get(0);
 		return true;
+}
 }
