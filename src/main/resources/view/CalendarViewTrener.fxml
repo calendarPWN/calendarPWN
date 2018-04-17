@@ -8,10 +8,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="800.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="pl.pwn.reaktor.controller.CalendarViewController">
+<AnchorPane prefHeight="800.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.pwn.reaktor.controller.CalendarViewController">
    <children>
-      <TableView layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="577.0" prefWidth="1025.0">
+      <TableView fx:id="table_calendar" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="577.0" prefWidth="1025.0">
         <columns>
           <TableColumn fx:id="col_termin" prefWidth="75.0" text="Termin" />
           <TableColumn fx:id="col_tematyka" prefWidth="124.0" text="Tematyka" />
@@ -32,5 +31,6 @@
       <Button fx:id="btn_wyloguj" layoutX="46.0" layoutY="746.0" mnemonicParsing="false" onMouseClicked="#wyloguj" prefHeight="31.0" prefWidth="165.0" text="Wyloguj" />
       <ComboBox fx:id="cb_grupa" layoutX="820.0" layoutY="746.0" prefWidth="150.0" />
       <Label layoutX="737.0" layoutY="751.0" text="Grupa:" />
+      <Button fx:id="btn_filtruj" layoutX="872.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#filtruj" prefHeight="25.0" prefWidth="92.0" text="Filtruj" />
    </children>
 </AnchorPane>
