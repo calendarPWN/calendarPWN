@@ -17,6 +17,10 @@
 		<!-- <mapping class="pl.pwn.reaktor.model.Encja" /> -->
 		<!-- <mapping class="pl.pwn.reaktor.model.User" /> -->
 		<mapping class="pl.pwn.reaktor.model.Login" />
+		<mapping class="pl.pwn.reaktor.model.CalendarFilter" />
+		<mapping class="pl.pwn.reaktor.model.Calendar" />
+		<mapping class="pl.pwn.reaktor.model.Plan" />
+		
 		
 	</session-factory>
 </hibernate-configuration>

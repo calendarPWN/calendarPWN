@@ -56,4 +56,13 @@ public class CalendarService {
 		session.close();
 		return calendar;
 	}
+	
+	public void update(Calendar selectedItem) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+
+		session.saveOrUpdate(selectedItem);
+		transaction.commit();
+		session.close();
+	}
 }
