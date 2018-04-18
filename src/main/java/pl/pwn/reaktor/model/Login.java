@@ -5,22 +5,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="login")
+//@org.hibernate.annotations.Table(appliesTo = "login")
 public class Login {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
-	@Column(unique = true)
+	
+	@Column(name = "login")
 	private String login;
-
+	
+	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "Trener_idTrener")
+	@Column(name = "trener_idtrener")
 	private String idTrener;
-
-	
 
 	public long getId() {
 		return id;
@@ -112,7 +114,4 @@ public class Login {
 		return "Login [id=" + id + ", login=" + login + ", password=" + password + ", idTrener=" + idTrener + "]";
 	}
 
-	
-
-	
 }

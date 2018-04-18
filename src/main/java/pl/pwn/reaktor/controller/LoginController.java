@@ -1,6 +1,7 @@
 package pl.pwn.reaktor.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import pl.pwn.reaktor.Main;
-import pl.pwn.reaktor.service.UserService;
+import pl.pwn.reaktor.service.LoginService;
 
 public class LoginController {
 
@@ -26,10 +27,12 @@ public class LoginController {
     private TextField tf_password;
 
     @FXML
-    void login_action(MouseEvent event) throws IOException {
+    void login_action(MouseEvent event) throws IOException, SQLException {
     	String login = tf_login.getText();
 		String password = tf_password.getText();
-		boolean isLogin = userService.login(login, password);
+		System.out.println(login);
+		System.out.println(password);
+		boolean isLogin = loginService.login(login, password);
 		System.out.println(isLogin);
 		if (isLogin) {
 			Parent parent = FXMLLoader.load(getClass().getResource("/view/CalendarViewTrener.fxml"));
@@ -43,10 +46,10 @@ public class LoginController {
 			error.show();
 		}
     }
-    private UserService userService;
+    private LoginService loginService;
 
 	public void initialize() {
-		userService = new UserService();
+		loginService = new LoginService();
 	}
 
 }
