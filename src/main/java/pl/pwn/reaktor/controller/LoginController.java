@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import pl.pwn.reaktor.Main;
-import pl.pwn.reaktor.service.UserService;
+import pl.pwn.reaktor.service.LoginService;
 
 public class LoginController {
 
@@ -27,7 +27,7 @@ public class LoginController {
     void login_action(MouseEvent event) {
     	String login = tf_login.getText();
 		String password = tf_password.getText();
-		boolean isLogin = userService.login(login, password);
+		boolean isLogin = loginService.login(login, password);
 		if (isLogin) {
 			Parent parent = FXMLLoader.load(getClass().getResource("/view/AnkietaView.fxml"));
 			Scene scene = new Scene(parent);
@@ -40,10 +40,10 @@ public class LoginController {
 			error.show();
 		}
     }
-    private UserService userService;
+    private LoginService loginService;
 
 	public void initialize() {
-		userService = new UserService();
+		loginService = new LoginService();
 	}
 
 }
