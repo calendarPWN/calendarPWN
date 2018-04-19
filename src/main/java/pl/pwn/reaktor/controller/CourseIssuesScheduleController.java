@@ -271,7 +271,6 @@ public class CourseIssuesScheduleController {
     
     @FXML
     void updateCMB02(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
     	Query query = session.createQuery("FROM TematySzkolen WHERE id!=:id1");
     	query.setLong("id1", id1);
@@ -295,11 +294,8 @@ public class CourseIssuesScheduleController {
 
     @FXML
     void updateCMB04(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue02.getSelectionModel();
     	Long id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue03.getSelectionModel();
     	Long id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3");
@@ -313,13 +309,9 @@ public class CourseIssuesScheduleController {
 
     @FXML
     void updateCMB05(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue02.getSelectionModel();
     	Long id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue03.getSelectionModel();
     	Long id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue04.getSelectionModel();
     	Long id4 = cmbIssue04.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3 AND id != :id4");
@@ -334,15 +326,10 @@ public class CourseIssuesScheduleController {
 
     @FXML
     void updateCMB06(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue02.getSelectionModel();
     	Long id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue03.getSelectionModel();
     	Long id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue04.getSelectionModel();
     	Long id4 = cmbIssue04.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue05.getSelectionModel();
     	Long id5 = cmbIssue05.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3 AND id != :id4 AND id != :id5");
@@ -358,17 +345,11 @@ public class CourseIssuesScheduleController {
 
     @FXML
     void updateCMB07(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue02.getSelectionModel();
     	Long id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue03.getSelectionModel();
     	Long id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue04.getSelectionModel();
     	Long id4 = cmbIssue04.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue05.getSelectionModel();
     	Long id5 = cmbIssue05.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue06.getSelectionModel();
     	Long id6 = cmbIssue06.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3 AND id != :id4 AND id != :id5 AND id !=:id6");
@@ -385,19 +366,13 @@ public class CourseIssuesScheduleController {
 
     @FXML
     void updateCMB08(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
+    	
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue02.getSelectionModel();
     	Long id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue03.getSelectionModel();
     	Long id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue04.getSelectionModel();
     	Long id4 = cmbIssue04.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue05.getSelectionModel();
     	Long id5 = cmbIssue05.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue06.getSelectionModel();
     	Long id6 = cmbIssue06.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue07.getSelectionModel();
     	Long id7 = cmbIssue07.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3 AND id != :id4 AND id != :id5 AND id != :id6 AND id != :id7");
@@ -415,21 +390,13 @@ public class CourseIssuesScheduleController {
 
     @FXML
     void updateCMB09(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue02.getSelectionModel();
     	Long id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue03.getSelectionModel();
     	Long id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue04.getSelectionModel();
     	Long id4 = cmbIssue04.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue05.getSelectionModel();
     	Long id5 = cmbIssue05.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue06.getSelectionModel();
     	Long id6 = cmbIssue06.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue07.getSelectionModel();
     	Long id7 = cmbIssue07.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue08.getSelectionModel();
     	Long id8 = cmbIssue08.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3 AND id != :id4 AND id != :id5 AND id != :id6 AND id != :id7 AND id != :id8");
@@ -448,23 +415,14 @@ public class CourseIssuesScheduleController {
 
     @FXML
     void updateCMB10(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue02.getSelectionModel();
     	Long id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue03.getSelectionModel();
     	Long id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue04.getSelectionModel();
     	Long id4 = cmbIssue04.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue05.getSelectionModel();
     	Long id5 = cmbIssue05.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue06.getSelectionModel();
     	Long id6 = cmbIssue06.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue07.getSelectionModel();
     	Long id7 = cmbIssue07.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue08.getSelectionModel();
     	Long id8 = cmbIssue08.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue09.getSelectionModel();
     	Long id9 = cmbIssue09.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3 AND id != :id4 AND id != :id5 AND id != :id6 AND id != :id7 AND id != :id8 AND id != :id9");
@@ -484,25 +442,15 @@ public class CourseIssuesScheduleController {
 
     @FXML
     void updateCMB11(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue02.getSelectionModel();
     	Long id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue03.getSelectionModel();
     	Long id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue04.getSelectionModel();
     	Long id4 = cmbIssue04.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue05.getSelectionModel();
     	Long id5 = cmbIssue05.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue06.getSelectionModel();
     	Long id6 = cmbIssue06.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue07.getSelectionModel();
     	Long id7 = cmbIssue07.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue08.getSelectionModel();
     	Long id8 = cmbIssue08.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue09.getSelectionModel();
     	Long id9 = cmbIssue09.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue10.getSelectionModel();
     	Long id10 = cmbIssue10.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3 AND id != :id4 AND id != :id5 AND id != :id6 AND id != :id7 AND id != :id8 AND id != :id9 AND id != :id10");
@@ -523,27 +471,16 @@ public class CourseIssuesScheduleController {
 
     @FXML
     void updateCMB12(ActionEvent event) {
-    	cmbIssue01.getSelectionModel();
     	Long id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue02.getSelectionModel();
     	Long id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue03.getSelectionModel();
     	Long id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue04.getSelectionModel();
     	Long id4 = cmbIssue04.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue05.getSelectionModel();
     	Long id5 = cmbIssue05.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue06.getSelectionModel();
     	Long id6 = cmbIssue06.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue07.getSelectionModel();
     	Long id7 = cmbIssue07.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue08.getSelectionModel();
     	Long id8 = cmbIssue08.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue09.getSelectionModel();
     	Long id9 = cmbIssue09.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue10.getSelectionModel();
     	Long id10 = cmbIssue10.getSelectionModel().getSelectedItem().getId();
-    	cmbIssue11.getSelectionModel();
     	Long id11 = cmbIssue10.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3 AND id != :id4 AND id != :id5 AND id != :id6 AND id != :id7 AND id != :id8 AND id != :id9 AND id != :id10 AND id != :id11");
