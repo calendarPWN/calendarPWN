@@ -20,6 +20,8 @@
 		<mapping class="pl.pwn.reaktor.model.CalendarFilter" />
 		<mapping class="pl.pwn.reaktor.model.Calendar" />
 		<mapping class="pl.pwn.reaktor.model.Plan" />
+		<mapping class="pl.pwn.reaktor.model.TematySzkolen" />
+		<mapping class="pl.pwn.reaktor.model.Szkolenia" />
 		
 		
 	</session-factory>

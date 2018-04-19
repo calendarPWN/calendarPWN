@@ -1,2 +1,5 @@
-"idSzkolenie";"Nazwa";"Liczba_dni";"Typ"
+"idszkolenie";"nazwa";"liczba_dni";"typ"
 1;"Back-end";30;"W"
+2;"Front-end";30;"W"
+3;"Back-end";30;"D"
+4;"Front-end";30;"D"

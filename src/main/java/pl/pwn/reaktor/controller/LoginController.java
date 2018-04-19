@@ -32,7 +32,8 @@ public class LoginController {
 		String password = tf_password.getText();
 		boolean isLogin = loginService.login(login, password);
 		if (isLogin) {
-			Parent parent = FXMLLoader.load(getClass().getResource("/view/CalendarViewTrener.fxml"));
+			//Parent parent = FXMLLoader.load(getClass().getResource("/view/CalendarViewTrener.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource("/view/CourseIssuesSchedule.fxml"));
 			Scene scene = new Scene(parent);
 			Main.getPrimaryStage().setScene(scene);
 		} else {
