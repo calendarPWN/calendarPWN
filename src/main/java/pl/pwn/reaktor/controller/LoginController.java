@@ -30,10 +30,7 @@ public class LoginController {
     void login_action(MouseEvent event) throws IOException, SQLException {
     	String login = tf_login.getText();
 		String password = tf_password.getText();
-		System.out.println(login);
-		System.out.println(password);
 		boolean isLogin = loginService.login(login, password);
-		System.out.println(isLogin);
 		if (isLogin) {
 			Parent parent = FXMLLoader.load(getClass().getResource("/view/CalendarViewTrener.fxml"));
 			Scene scene = new Scene(parent);

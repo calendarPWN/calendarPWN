@@ -15,6 +15,7 @@ import org.hibernate.Transaction;
 import pl.pwn.reaktor.model.Login;
 import pl.pwn.reaktor.util.HibernateUtil;
 
+@SuppressWarnings("deprecation")
 public class LoginService {
 	
 	public boolean login(String login, String password) throws SQLException {

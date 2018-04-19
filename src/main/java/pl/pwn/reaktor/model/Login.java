@@ -9,7 +9,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="login")
-//@org.hibernate.annotations.Table(appliesTo = "login")
 public class Login {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -36,7 +36,7 @@ private static Stage primaryStage;
 			e.printStackTrace();
 			Alert errorSendMail = new Alert(AlertType.ERROR);
 			errorSendMail.setTitle("ERROR");
-			errorSendMail.setHeaderText("Błąd");
+			errorSendMail.setHeaderText("Blad");
 			errorSendMail.setContentText(e.getMessage());
 			errorSendMail.show();
 		}

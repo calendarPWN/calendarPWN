@@ -1,6 +1,5 @@
 package pl.pwn.reaktor.model;
 
-	import javax.persistence.Column;
 	import javax.persistence.Entity;
 	import javax.persistence.GeneratedValue;
 	import javax.persistence.GenerationType;
@@ -15,4 +14,8 @@ package pl.pwn.reaktor.model;
 		private long idGrupa;
 		private String dzien_szkol;
 		
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> klaudiusz
