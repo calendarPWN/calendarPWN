@@ -1,10 +1,16 @@
 package pl.pwn.reaktor.model;
 
 import javax.persistence.Column;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="calendar")
 public class Calendar {
 
 	@Id
@@ -96,4 +102,6 @@ public class Calendar {
 	}
 	
 	
+
 }
+

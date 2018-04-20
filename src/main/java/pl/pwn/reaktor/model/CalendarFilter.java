@@ -2,27 +2,17 @@ package pl.pwn.reaktor.model;
 
 public class CalendarFilter {
 
-	private String termin;
 	private String tematyka;
 	private String trener;
-	private String weekend;
+	private String dzienSzkolenia;
 	private String grupa;
 	
-	public CalendarFilter(String termin, String tematyka, String trener, String weekend, String grupa) {
+	public CalendarFilter(String tematyka, String trener, String dzienSzkolenia, String grupa) {
 		super();
-		this.termin = termin;
 		this.tematyka = tematyka;
 		this.trener = trener;
-		this.weekend = weekend;
+		this.dzienSzkolenia = dzienSzkolenia;
 		this.grupa = grupa;
-	}
-
-	public String getTermin() {
-		return termin;
-	}
-
-	public void setTermin(String termin) {
-		this.termin = termin;
 	}
 
 	public String getTematyka() {
@@ -41,12 +31,12 @@ public class CalendarFilter {
 		this.trener = trener;
 	}
 
-	public String getWeekend() {
-		return weekend;
+	public String getDzienSzkolenia() {
+		return dzienSzkolenia;
 	}
 
-	public void setWeekend(String weekend) {
-		this.weekend = weekend;
+	public void setDzienSzkolenia(String dzienSzkolenia) {
+		this.dzienSzkolenia = dzienSzkolenia;
 	}
 
 	public String getGrupa() {
@@ -56,6 +46,15 @@ public class CalendarFilter {
 	public void setGrupa(String grupa) {
 		this.grupa = grupa;
 	}
+
+	@Override
+	public String toString() {
+		return "CalendarFilter [tematyka=" + tematyka + ", trener=" + trener + ", dzienSzkolenia=" + dzienSzkolenia
+				+ ", grupa=" + grupa + "]";
+	}
 	
 	
+	
+
 }
+
