@@ -20,7 +20,7 @@ public class Grupa {
 	private String akronim;
 	
 	@Column(name = "data_start")
-	private Long dataStart;
+	private String dataStart;
 	
 	@Column(name = "szkolenie_idszkolenie")
 	private Long idSzkolenie;
@@ -29,14 +29,14 @@ public class Grupa {
 		super();
 	}
 
-	public Grupa(String akronim, Long dataStart, Long idSzkolenie) {
+	public Grupa(String akronim, String dataStart, Long idSzkolenie) {
 		super();
 		this.akronim = akronim;
 		this.dataStart = dataStart;
 		this.idSzkolenie = idSzkolenie;
 	}
 
-	public Grupa(long id, String akronim, Long dataStart, Long idSzkolenie) {
+	public Grupa(long id, String akronim, String dataStart, Long idSzkolenie) {
 		super();
 		this.id = id;
 		this.akronim = akronim;
@@ -60,11 +60,11 @@ public class Grupa {
 		this.akronim = akronim;
 	}
 
-	public Long getDataStart() {
+	public String getDataStart() {
 		return dataStart;
 	}
 
-	public void setDataStart(Long dataStart) {
+	public void setDataStart(String dataStart) {
 		this.dataStart = dataStart;
 	}
 
@@ -121,6 +121,5 @@ public class Grupa {
 		return "Grupa [id=" + id + ", akronim=" + akronim + ", dataStart=" + dataStart + ", idSzkolenie=" + idSzkolenie
 				+ "]";
 	}
-	
 	
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="pl.pwn.reaktor.controller.TrenerViewController">
+   <children>
+      <TextField fx:id="tfImie" layoutX="83.0" layoutY="30.0" promptText="Imię" />
+      <TextField fx:id="tfNazwisko" layoutX="82.0" layoutY="70.0" promptText="Nazwisko" />
+      <TextField fx:id="tfInicjaly" layoutX="82.0" layoutY="120.0" promptText="Inicjały" />
+      <ComboBox fx:id="cmbMentor" layoutX="82.0" layoutY="164.0" prefWidth="150.0" promptText="Mentor" />
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="34.0" prefWidth="60.0" text="Imię:" />
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="74.0" prefWidth="60.0" text="Nazwisko:" />
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="121.0" prefWidth="60.0" text="Inicjały:" />
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="168.0" prefWidth="60.0" text="Mentor:" />
+      <Button fx:id="btnZapiszTrenera" layoutX="74.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#zapiszTrenera" text="Zapisz Trenera" />
+   </children>
+</AnchorPane>

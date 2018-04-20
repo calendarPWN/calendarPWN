@@ -24,6 +24,7 @@
 		<mapping class="pl.pwn.reaktor.model.Plan" />
 		<mapping class="pl.pwn.reaktor.model.Szkolenia" />
 		<mapping class="pl.pwn.reaktor.model.TematySzkolen" />
+		<mapping class="pl.pwn.reaktor.model.Trener" />
 		
 	</session-factory>
 </hibernate-configuration>

@@ -1,5 +1,6 @@
 package pl.pwn.reaktor.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,9 +13,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import pl.pwn.reaktor.util.HibernateUtil;
 import pl.pwn.reaktor.model.TematySzkolen;
+import pl.pwn.reaktor.Main;
 import pl.pwn.reaktor.model.Grupa;
 import pl.pwn.reaktor.model.Kolejnosc;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -529,7 +534,7 @@ public class CourseIssuesScheduleController {
     }
 
     @FXML
-    void zapisz(MouseEvent event) {
+    void zapisz(MouseEvent event) throws IOException {
     	Session session = HibernateUtil.getSessionFactory().openSession();
     	
     	Transaction trx = session.beginTransaction();
@@ -705,6 +710,10 @@ public class CourseIssuesScheduleController {
     	session.save(kolejnosc);
     	trx.commit();
     	session.close();
+    	
+    	Parent parent = FXMLLoader.load(getClass().getResource("/view/MainAppView.fxml"));
+		Scene scene = new Scene(parent);
+		Main.getPrimaryStage().setScene(scene);
     }
     
     Session session = HibernateUtil.getSessionFactory().openSession();

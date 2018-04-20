@@ -33,7 +33,8 @@ public class LoginController {
 		boolean isLogin = loginService.login(login, password);
 		if (isLogin) {
 			//Parent parent = FXMLLoader.load(getClass().getResource("/view/CalendarViewTrener.fxml"));
-			Parent parent = FXMLLoader.load(getClass().getResource("/view/CourseIssuesSchedule.fxml"));
+			//Parent parent = FXMLLoader.load(getClass().getResource("/view/CourseIssuesSchedule.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource("/view/MainAppView.fxml"));
 			Scene scene = new Scene(parent);
 			Main.getPrimaryStage().setScene(scene);
 		} else {

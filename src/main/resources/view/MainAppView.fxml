@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.pwn.reaktor.controller.MainAppController">
+   <children>
+      <Button fx:id="btnInsertTrener" layoutX="83.0" layoutY="96.0" mnemonicParsing="false" onMouseClicked="#insertTrener" prefHeight="78.0" prefWidth="167.0" text="Wprowadź Trenera" />
+      <Button fx:id="btnInsertGroup" layoutX="317.0" layoutY="96.0" mnemonicParsing="false" onMouseClicked="#insertGroup" prefHeight="78.0" prefWidth="167.0" text="Wprowadź Grupę" />
+      <Button fx:id="btnInsertIssuesSchedule" layoutX="555.0" layoutY="96.0" mnemonicParsing="false" onMouseClicked="#insertIssuesSchedule" prefHeight="78.0" prefWidth="167.0" text="Wprowadź Kolejność Kursów" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="btnShowPlan" layoutX="317.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#showPlan" prefHeight="78.0" prefWidth="167.0" text="Pokaż Plan" />
+      <Button fx:id="btnExit" layoutX="555.0" layoutY="462.0" mnemonicParsing="false" onMouseClicked="#quitApp" prefHeight="78.0" prefWidth="167.0" text="Wyjście" />
+   </children>
+</AnchorPane>
