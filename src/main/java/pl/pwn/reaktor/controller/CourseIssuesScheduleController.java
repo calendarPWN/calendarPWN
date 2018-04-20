@@ -1,6 +1,7 @@
 package pl.pwn.reaktor.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,6 +17,7 @@ import pl.pwn.reaktor.model.TematySzkolen;
 import pl.pwn.reaktor.Main;
 import pl.pwn.reaktor.model.Grupa;
 import pl.pwn.reaktor.model.Kolejnosc;
+import pl.pwn.reaktor.model.Plan;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -708,6 +710,14 @@ public class CourseIssuesScheduleController {
     	System.out.println(tempKolejnosc);
     	Kolejnosc kolejnosc = new Kolejnosc(tempKolejnosc, idSzkolenia);
     	session.save(kolejnosc);
+    	
+    	//String[] listaTematow;
+    	
+    	//listaTematow = tempKolejnosc.split(";");
+    	
+    	//Plan plan = new Plan(idGrupa, dzienSzkol, tSzkIdTSzk, trIdTr, szkIdSzk);
+    	
+    	
     	trx.commit();
     	session.close();
     	
@@ -716,6 +726,11 @@ public class CourseIssuesScheduleController {
 		Main.getPrimaryStage().setScene(scene);
     }
     
+    public void zapiszPlan() {
+    	Session session = HibernateUtil.getSessionFactory().openSession();
+    	Transaction trx = session.beginTransaction();
+    	
+    }
     Session session = HibernateUtil.getSessionFactory().openSession();
     	
 	Transaction trx = session.beginTransaction();

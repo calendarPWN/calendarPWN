@@ -1,17 +1,32 @@
 package pl.pwn.reaktor.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "view_calendar")
 public class Calendar {
 
+	//grupa, dzien_szkolenia, termin, trener, tematyka
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "termin")
 	private String termin;
+	
+	@Column(name = "tematyka")
 	private String tematyka;
+	
+	@Column(name = "trener")
 	private String trener;
+	
+	@Column(name = "grupa")
 	private String grupa;
+	
+	@Column(name = "dzien_szkolenia")
 	private String dzien;
 	
 	public Calendar(String termin, String tematyka, String trener, String grupa, String dzien) {

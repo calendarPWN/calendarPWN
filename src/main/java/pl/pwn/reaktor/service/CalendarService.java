@@ -20,7 +20,8 @@ public class CalendarService {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction trx = session.beginTransaction();
 
-		Query query = session.createQuery("SELECT p from Plan p");
+		//Query query = session.createQuery("SELECT p from Plan p");
+		Query query = session.createQuery("FROM Calendar");
 		
 		/*"SELECT \r\n" + 
 				"    g.akronim AS grupa,\r\n" + 
