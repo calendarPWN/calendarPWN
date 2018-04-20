@@ -8,14 +8,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.pwn.reaktor.controller.CalendarViewController">
+<AnchorPane prefHeight="800.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.pwn.reaktor.controller.CalendarViewController">
    <children>
       <TableView fx:id="table_calendar" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="577.0" prefWidth="1025.0">
         <columns>
-          <TableColumn fx:id="col_termin" prefWidth="75.0" text="Termin" />
-          <TableColumn fx:id="col_tematyka" prefWidth="124.0" text="Tematyka" />
+            <TableColumn fx:id="col_grupa" prefWidth="75.0" text="Grupa" />
+          <TableColumn fx:id="col_dzien_szkolenia" prefWidth="75.0" text="Dzień szkolenia" />
+            <TableColumn fx:id="col_termin" prefWidth="75.0" text="Termin" />
             <TableColumn fx:id="col_trener" prefWidth="75.0" text="Trener" />
-            <TableColumn fx:id="col_weekend" prefWidth="75.0" text="Weekend" />
+          <TableColumn fx:id="col_tematyka" prefWidth="124.0" text="Tematyka" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -24,13 +25,12 @@
       <Separator layoutX="5.0" layoutY="28.0" prefHeight="13.0" prefWidth="1015.0" />
       <Separator layoutX="5.0" layoutY="137.0" prefHeight="13.0" prefWidth="1015.0" />
       <Label layoutX="14.0" layoutY="41.0" text="Filtr" />
-      <ComboBox fx:id="cb_weekend" layoutX="778.0" layoutY="90.0" prefHeight="31.0" prefWidth="233.0" />
-      <ComboBox fx:id="cb_trener" layoutX="521.0" layoutY="90.0" prefHeight="31.0" prefWidth="233.0" />
-      <ComboBox fx:id="cb_tematyka" layoutX="268.0" layoutY="90.0" prefHeight="31.0" prefWidth="233.0" />
-      <ComboBox fx:id="cb_termin" layoutX="14.0" layoutY="90.0" prefHeight="31.0" prefWidth="233.0" />
+      <ComboBox fx:id="cb_dzien_szkolenia" layoutX="236.0" layoutY="90.0" prefHeight="31.0" prefWidth="150.0" />
+      <ComboBox fx:id="cb_trener" layoutX="639.0" layoutY="90.0" prefHeight="31.0" prefWidth="150.0" />
+      <ComboBox fx:id="cb_tematyka" layoutX="836.0" layoutY="90.0" prefHeight="31.0" prefWidth="150.0" />
       <Button fx:id="btn_wyloguj" layoutX="46.0" layoutY="746.0" mnemonicParsing="false" onMouseClicked="#wyloguj" prefHeight="31.0" prefWidth="165.0" text="Wyloguj" />
-      <ComboBox fx:id="cb_grupa" layoutX="820.0" layoutY="746.0" prefWidth="150.0" />
-      <Label layoutX="737.0" layoutY="751.0" text="Grupa:" />
+      <ComboBox fx:id="cb_grupa" layoutX="34.0" layoutY="90.0" prefHeight="31.0" prefWidth="150.0" />
       <Button fx:id="btn_filtruj" layoutX="872.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#filtruj" prefHeight="25.0" prefWidth="92.0" text="Filtruj" />
+      <Button fx:id="btn_usun_wiersz" layoutX="876.0" layoutY="749.0" mnemonicParsing="false" onMouseClicked="#usun" prefHeight="25.0" prefWidth="92.0" text="Usuń wiersz" />
    </children>
 </AnchorPane>

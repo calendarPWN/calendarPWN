@@ -5,9 +5,9 @@
 	<session-factory>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.username">26932668_cal</property>
-		<property name="hibernate.connection.password">calendar#2018</property>
-		<property name="hibernate.connection.url">jdbc:mysql://serwer1884902.home.pl:3306/26932668_cal</property>
+		<property name="hibernate.connection.username"><!-- 26932668_cal -->root</property>
+		<property name="hibernate.connection.password"><!-- calendar#2018 -->S@larian1</property>
+		<property name="hibernate.connection.url"><!-- jdbc:mysql://serwer1884902.home.pl:3306/26932668_cal -->jdbc:mysql://localhost:3306/26932668_cal</property>
 		<property name="format_sql">false</property>
 		<property name="show_sql">true</property>
 		<!-- automatyczne tworzenie modelu opcje:none, validate, create, update, 
@@ -19,7 +19,8 @@
 		<mapping class="pl.pwn.reaktor.model.Login" />
 		<mapping class="pl.pwn.reaktor.model.CalendarFilter" />
 		<mapping class="pl.pwn.reaktor.model.Calendar" />
-		<mapping class="pl.pwn.reaktor.model.Plan" />
+		<mapping class="pl.pwn.reaktor.model.TematySzkolen" />
+		<mapping class="pl.pwn.reaktor.model.Szkolenia" />
 		
 		
 	</session-factory>

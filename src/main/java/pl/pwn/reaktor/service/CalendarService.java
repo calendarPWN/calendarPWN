@@ -20,7 +20,7 @@ public class CalendarService {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction trx = session.beginTransaction();
 
-		Query query = session.createQuery("SELECT p FROM plan p");
+		Query query = session.createQuery("SELECT c FROM Calendar c");
 		List<Calendar> calendar = query.list();
 		trx.commit();
 		session.close();
@@ -63,6 +63,17 @@ public class CalendarService {
 
 		session.saveOrUpdate(selectedItem);
 		transaction.commit();
+		session.close();
+}
+	public void delete(long id) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction trx = session.beginTransaction();
+
+		Query query = session.createQuery("DELETE FROM Calendar c WHERE id=:id");
+		query.setLong("id", id);
+		query.executeUpdate();
+
+		trx.commit();
 		session.close();
 	}
 }
