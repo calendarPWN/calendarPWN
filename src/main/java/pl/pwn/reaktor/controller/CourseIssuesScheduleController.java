@@ -12,9 +12,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import pl.pwn.reaktor.util.HibernateUtil;
 import pl.pwn.reaktor.model.TematySzkolen;
-import pl.pwn.reaktor.model.Szkolenia;
-
-
+import pl.pwn.reaktor.model.Grupa;
+import pl.pwn.reaktor.model.Kolejnosc;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -27,7 +26,7 @@ import javafx.scene.input.MouseEvent;
 public class CourseIssuesScheduleController {
 
     @FXML
-    private ComboBox<Szkolenia> cmbKurs;
+    private ComboBox<Grupa> cmbKurs;
 
     @FXML
     private Label lblKurs;
@@ -481,7 +480,7 @@ public class CourseIssuesScheduleController {
     	Long id8 = cmbIssue08.getSelectionModel().getSelectedItem().getId();
     	Long id9 = cmbIssue09.getSelectionModel().getSelectedItem().getId();
     	Long id10 = cmbIssue10.getSelectionModel().getSelectedItem().getId();
-    	Long id11 = cmbIssue10.getSelectionModel().getSelectedItem().getId();
+    	Long id11 = cmbIssue11.getSelectionModel().getSelectedItem().getId();
     	
     	Query query = session.createQuery("FROM TematySzkolen WHERE id != :id1 AND id != :id2 AND id != :id3 AND id != :id4 AND id != :id5 AND id != :id6 AND id != :id7 AND id != :id8 AND id != :id9 AND id != :id10 AND id != :id11");
     	query.setLong("id1", id1);
@@ -513,7 +512,7 @@ public class CourseIssuesScheduleController {
     	txtLiczbaDniIssue10.setText("");
     	txtLiczbaDniIssue11.setText("");
     	txtLiczbaDniIssue12.setText("");
-    	cmbKurs.setItems((ObservableList<Szkolenia>) courses);
+    	cmbKurs.setItems((ObservableList<Grupa>) groups);
 		cmbIssue01.setItems((ObservableList<TematySzkolen>) issues);
 		cmbIssue02.setItems((ObservableList<TematySzkolen>) null);
 		cmbIssue03.setItems((ObservableList<TematySzkolen>) null);
@@ -526,8 +525,188 @@ public class CourseIssuesScheduleController {
 		cmbIssue10.setItems((ObservableList<TematySzkolen>) null);
 		cmbIssue11.setItems((ObservableList<TematySzkolen>) null);
 		cmbIssue12.setItems((ObservableList<TematySzkolen>) null);
+		lblSumaDni.setText("0");
     }
 
+    @FXML
+    void zapisz(MouseEvent event) {
+    	Session session = HibernateUtil.getSessionFactory().openSession();
+    	
+    	Transaction trx = session.beginTransaction();
+    	
+    	//Long idGrupy = cmbKurs.getSelectionModel().getSelectedItem().getId();
+    	Long idSzkolenia = cmbKurs.getSelectionModel().getSelectedItem().getIdSzkolenie();
+    	
+    	Long id1 = null;
+    	Long id2 = null;
+    	Long id3 = null;
+    	Long id4 = null;
+    	Long id5 = null;
+    	Long id6 = null;
+    	Long id7 = null;
+    	Long id8 = null;
+    	Long id9 = null;
+    	Long id10 = null;
+    	Long id11 = null;
+    	Long id12 = null;
+    	
+    	Long liczbaDni01 = null;
+    	Long liczbaDni02 = null;
+    	Long liczbaDni03 = null;
+    	Long liczbaDni04 = null;
+    	Long liczbaDni05 = null;
+    	Long liczbaDni06 = null;
+    	Long liczbaDni07 = null;
+    	Long liczbaDni08 = null;
+    	Long liczbaDni09 = null;
+    	Long liczbaDni10 = null;
+    	Long liczbaDni11 = null;
+    	Long liczbaDni12 = null;
+    	
+    	
+    	
+    	if (!Objects.isNull(cmbIssue01.getSelectionModel().getSelectedItem())) {
+    		id1 = cmbIssue01.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue02.getSelectionModel().getSelectedItem())) {
+    		id2 = cmbIssue02.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue03.getSelectionModel().getSelectedItem())) {
+    		id3 = cmbIssue03.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue04.getSelectionModel().getSelectedItem())) {
+    		id4 = cmbIssue04.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue05.getSelectionModel().getSelectedItem())) {
+    		id5 = cmbIssue05.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue06.getSelectionModel().getSelectedItem())) {
+    		id6 = cmbIssue06.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue07.getSelectionModel().getSelectedItem())) {
+    		id7 = cmbIssue07.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue08.getSelectionModel().getSelectedItem())) {
+    		id8 = cmbIssue08.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue09.getSelectionModel().getSelectedItem())) {
+    		id9 = cmbIssue09.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue10.getSelectionModel().getSelectedItem())) {
+    		id10 = cmbIssue10.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue11.getSelectionModel().getSelectedItem())) {
+    		id11 = cmbIssue11.getSelectionModel().getSelectedItem().getId();
+    	}
+    	if (!Objects.isNull(cmbIssue12.getSelectionModel().getSelectedItem())) {
+    		id12 = cmbIssue12.getSelectionModel().getSelectedItem().getId();
+    	}
+    	
+    	if (!"".equals(txtLiczbaDniIssue01.getText())) {
+    		liczbaDni01 = Long.valueOf(txtLiczbaDniIssue01.getText());
+    	} else {
+    		liczbaDni01 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue02.getText())) {
+    		liczbaDni02 = Long.valueOf(txtLiczbaDniIssue02.getText());
+    	} else {
+    		liczbaDni02 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue03.getText())) {
+    		liczbaDni03 = Long.valueOf(txtLiczbaDniIssue03.getText());
+    	} else {
+    		liczbaDni03 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue04.getText())) {
+    		liczbaDni04 = Long.valueOf(txtLiczbaDniIssue04.getText());
+    	} else {
+    		liczbaDni04 = 0L;
+    	}if (!"".equals(txtLiczbaDniIssue05.getText())) {
+    		liczbaDni05 = Long.valueOf(txtLiczbaDniIssue05.getText());
+    	} else {
+    		liczbaDni05 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue06.getText())) {
+    		liczbaDni06 = Long.valueOf(txtLiczbaDniIssue06.getText());
+    	} else {
+    		liczbaDni06 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue07.getText())) {
+    		liczbaDni07 = Long.valueOf(txtLiczbaDniIssue07.getText());
+    	} else {
+    		liczbaDni07 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue08.getText())) {
+    		liczbaDni08 = Long.valueOf(txtLiczbaDniIssue08.getText());
+    	} else {
+    		liczbaDni08 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue09.getText())) {
+    		liczbaDni09 = Long.valueOf(txtLiczbaDniIssue09.getText());
+    	} else {
+    		liczbaDni09 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue10.getText())) {
+    		liczbaDni10 = Long.valueOf(txtLiczbaDniIssue10.getText());
+    	} else {
+    		liczbaDni10 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue11.getText())) {
+    		liczbaDni11 = Long.valueOf(txtLiczbaDniIssue11.getText());
+    	} else {
+    		liczbaDni11 = 0L;
+    	}
+    	if (!"".equals(txtLiczbaDniIssue12.getText())) {
+    		liczbaDni12 = Long.valueOf(txtLiczbaDniIssue12.getText());
+    	} else {
+    		liczbaDni12 = 0L;
+    	}
+    	
+    	String tempKolejnosc = "";
+    	
+    	if (!Objects.isNull(id1)) {
+    		tempKolejnosc = id1.toString() + "," + liczbaDni01.toString();
+    	}
+    	if (!Objects.isNull(id2)) {
+    		tempKolejnosc += ";" + id2.toString() + "," + liczbaDni02.toString();
+    	}
+    	if (!Objects.isNull(id3)) {
+    		tempKolejnosc += ";" + id3.toString() + "," + liczbaDni03.toString();
+    	}
+    	if (!Objects.isNull(id4)) {
+    		tempKolejnosc += ";" + id4.toString() + "," + liczbaDni04.toString();
+    	}
+    	if (!Objects.isNull(id5)) {
+    		tempKolejnosc += ";" + id5.toString() + "," + liczbaDni05.toString();
+    	}
+    	if (!Objects.isNull(id6)) {
+    		tempKolejnosc += ";" + id6.toString() + "," + liczbaDni06.toString();
+    	}
+    	if (!Objects.isNull(id7)) {
+    		tempKolejnosc += ";" + id7.toString() + "," + liczbaDni07.toString();
+    	}
+    	if (!Objects.isNull(id8)) {
+    		tempKolejnosc += ";" + id8.toString() + "," + liczbaDni08.toString();
+    	}
+    	if (!Objects.isNull(id9)) {
+    		tempKolejnosc += ";" + id9.toString() + "," + liczbaDni09.toString();
+    	}
+    	if (!Objects.isNull(id10)) {
+    		tempKolejnosc += ";" + id10.toString() + "," + liczbaDni10.toString();
+    	}
+    	if (!Objects.isNull(id11)) {
+    		tempKolejnosc += ";" + id11.toString() + "," + liczbaDni11.toString();
+    	}
+    	if (!Objects.isNull(id12)) {
+    		tempKolejnosc += ";" + id12.toString() + "," + liczbaDni12.toString();
+    	}
+    	System.out.println(tempKolejnosc);
+    	Kolejnosc kolejnosc = new Kolejnosc(tempKolejnosc, idSzkolenia);
+    	session.save(kolejnosc);
+    	trx.commit();
+    	session.close();
+    }
+    
     Session session = HibernateUtil.getSessionFactory().openSession();
     	
 	Transaction trx = session.beginTransaction();
@@ -537,14 +716,14 @@ public class CourseIssuesScheduleController {
 	List<TematySzkolen> listTematySzkolen = query.list();
 	ObservableList<TematySzkolen> issues = FXCollections.observableArrayList(listTematySzkolen);
 	
-	Query query2 = session.createQuery("FROM Szkolenia");
+	Query query2 = session.createQuery("FROM Grupa");
 	
-	List<Szkolenia> listSzkolenia = query2.list();  
-	ObservableList<Szkolenia> courses = FXCollections.observableArrayList(listSzkolenia);
+	List<Grupa> listGrupy = query2.list();  
+	ObservableList<Grupa> groups = FXCollections.observableArrayList(listGrupy);
 	
 	public void initialize() {
 
-		cmbKurs.setItems((ObservableList<Szkolenia>) courses);
+		cmbKurs.setItems((ObservableList<Grupa>) groups);
 		cmbIssue01.setItems((ObservableList<TematySzkolen>) issues);
 
 	}

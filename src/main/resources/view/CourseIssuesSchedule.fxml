@@ -35,7 +35,7 @@
       <ComboBox fx:id="cmbIssue12" layoutX="242.0" layoutY="602.0" prefWidth="150.0" promptText="Temat 12" />
       <TextField fx:id="txtLiczbaDniIssue12" layoutX="410.0" layoutY="602.0" onAction="#addLDI12" promptText="Liczba dni" />
       <Label fx:id="lblSumaDni" layoutX="410.0" layoutY="665.0" prefHeight="31.0" prefWidth="149.0" text="0" />
-      <Button fx:id="btnZapisz" layoutX="433.0" layoutY="731.0" mnemonicParsing="false" text="Zapisz" />
+      <Button fx:id="btnZapisz" layoutX="433.0" layoutY="731.0" mnemonicParsing="false" onMouseClicked="#zapisz" text="Zapisz" />
       <Button fx:id="btnClearForm" layoutX="548.0" layoutY="731.0" mnemonicParsing="false" onMouseClicked="#clearForm" text="Wyczyść formularz" />
       <Label layoutX="280.0" layoutY="672.0" text="Sumaryczna liczba dni:" />
    </children>
