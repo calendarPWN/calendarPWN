@@ -1,84 +1,75 @@
 package pl.pwn.reaktor.model;
 
+import javax.persistence.Column;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="calendar_view")
 public class Calendar {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String termin;
+	@Column(nullable = false)
 	private String tematyka;
 	private String trener;
-	private String grupa;
-	private String dzien;
+	private String weekend;
 	
-	public Calendar(String termin, String tematyka, String trener, String grupa, String dzien) {
-		super();
-		this.termin = termin;
-		this.tematyka = tematyka;
-		this.trener = trener;
-		this.grupa = grupa;
-		this.dzien = dzien;
-	}
-
-	public Calendar() {
-		super();
-	}
-
 	public String getTermin() {
 		return termin;
 	}
-
 	public void setTermin(String termin) {
 		this.termin = termin;
 	}
-
 	public String getTematyka() {
 		return tematyka;
 	}
-
 	public void setTematyka(String tematyka) {
 		this.tematyka = tematyka;
 	}
-
 	public String getTrener() {
 		return trener;
 	}
-
 	public void setTrener(String trener) {
 		this.trener = trener;
 	}
-
-	public String getGrupa() {
-		return grupa;
+	public String getWeekend() {
+		return weekend;
 	}
-
-	public void setGrupa(String grupa) {
-		this.grupa = grupa;
+	public void setWeekend(String weekend) {
+		this.weekend = weekend;
 	}
-
-	public String getDzien() {
-		return dzien;
+	public Calendar(String termin, String tematyka, String trener, String weekend) {
+		super();
+		this.termin = termin;
+		this.tematyka = tematyka;
+		this.trener = trener;
+		this.weekend = weekend;
 	}
-
-	public void setDzien(String dzien) {
-		this.dzien = dzien;
+	public Calendar() {
+		super();
 	}
-
+	@Override
+	public String toString() {
+		return "Plan [termin=" + termin + ", tematyka=" + tematyka + ", trener=" + trener + ", weekend=" + weekend
+				+ "]";
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((dzien == null) ? 0 : dzien.hashCode());
-		result = prime * result + ((grupa == null) ? 0 : grupa.hashCode());
 		result = prime * result + ((tematyka == null) ? 0 : tematyka.hashCode());
 		result = prime * result + ((termin == null) ? 0 : termin.hashCode());
 		result = prime * result + ((trener == null) ? 0 : trener.hashCode());
+		result = prime * result + ((weekend == null) ? 0 : weekend.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -88,16 +79,6 @@ public class Calendar {
 		if (getClass() != obj.getClass())
 			return false;
 		Calendar other = (Calendar) obj;
-		if (dzien == null) {
-			if (other.dzien != null)
-				return false;
-		} else if (!dzien.equals(other.dzien))
-			return false;
-		if (grupa == null) {
-			if (other.grupa != null)
-				return false;
-		} else if (!grupa.equals(other.grupa))
-			return false;
 		if (tematyka == null) {
 			if (other.tematyka != null)
 				return false;
@@ -113,15 +94,15 @@ public class Calendar {
 				return false;
 		} else if (!trener.equals(other.trener))
 			return false;
+		if (weekend == null) {
+			if (other.weekend != null)
+				return false;
+		} else if (!weekend.equals(other.weekend))
+			return false;
 		return true;
 	}
+	
+	
 
-	@Override
-	public String toString() {
-		return "Calendar [termin=" + termin + ", tematyka=" + tematyka + ", trener=" + trener + ", grupa=" + grupa
-				+ ", dzien=" + dzien + "]";
-	}
-	
-	
-	
 }
+

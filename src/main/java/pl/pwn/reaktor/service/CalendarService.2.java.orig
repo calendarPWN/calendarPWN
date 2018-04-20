@@ -20,29 +20,7 @@ public class CalendarService {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction trx = session.beginTransaction();
 
-		Query query = session.createQuery("SELECT p from Plan p");
-		
-		/*"SELECT \r\n" + 
-				"    g.akronim AS grupa,\r\n" + 
-				"    p.dzien_szkol AS dzien_szkolenia,\r\n" + 
-				"    td.db_date AS termin,\r\n" + 
-				"    CONCAT(t.Imie, ' ', t.Nazwisko) AS trener,\r\n" + 
-				"    ts.temat AS tematyka\r\n" + 
-				"FROM\r\n" + 
-				"    Grupa AS g" + 
-				"        LEFT JOIN" + 
-				"    Plan AS p ON g.idGrupa = p.idGrupa" + 
-				"        LEFT JOIN" + 
-				"    Time_dimension AS td ON td.day = (p.dzien_szkol + (SELECT " + 
-				"            td.day" + 
-				"        FROM" + 
-				"            time_dimension AS td" + 
-				"                LEFT JOIN" + 
-				"            grupa AS g ON td.db_date = g.data_start))" + 
-				"        LEFT JOIN" + 
-				"    Trener AS t ON p.trener_idtrener = idtrener" + 
-				"        LEFT JOIN" + 
-				"    Tematy_szkolen AS ts ON ts.idtematy_szkolen = p.tematy_szkolen_idtematy_szkolen");*/
+		Query query = session.createQuery("SELECT c FROM Calendar c");
 		List<Calendar> calendar = query.list();
 		trx.commit();
 		session.close();
@@ -55,6 +33,9 @@ public class CalendarService {
 
 		Criteria criteria = session.createCriteria(Calendar.class);
 
+		if (Objects.nonNull(filter.getTermin()) && !"Select".equals(filter.getTermin())) {
+			criteria.add(Restrictions.eq("termin", filter.getTermin()));
+		}
 		if (Objects.nonNull(filter.getTematyka()) && !filter.getTematyka().isEmpty()) {
 			criteria.add(Restrictions.eq("tematyka", filter.getTematyka()));
 		}
@@ -62,9 +43,9 @@ public class CalendarService {
 				&& !filter.getTrener().isEmpty()) {
 			criteria.add(Restrictions.eq("trener", filter.getTrener()));
 		}
-		if (Objects.nonNull(filter.getDzienSzkolenia()) && !"Select".equals(filter.getDzienSzkolenia())
+		if (Objects.nonNull(filter.getWeekend()) && !"Select".equals(filter.getWeekend())
 				&& !filter.getTrener().isEmpty()) {
-			criteria.add(Restrictions.eq("weekend", filter.getDzienSzkolenia()));
+			criteria.add(Restrictions.eq("weekend", filter.getWeekend()));
 		}
 		if (Objects.nonNull(filter.getGrupa()) && !"Select".equals(filter.getGrupa())
 				&& !filter.getGrupa().isEmpty()) {
@@ -76,7 +57,7 @@ public class CalendarService {
 		return calendar;
 	}
 	
-	/*public void update(Calendar selectedItem) {
+	public void update(Calendar selectedItem) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 
@@ -94,5 +75,5 @@ public class CalendarService {
 
 		trx.commit();
 		session.close();
-	}*/
+	}
 }
